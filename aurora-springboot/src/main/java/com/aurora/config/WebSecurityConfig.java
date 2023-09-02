@@ -78,6 +78,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         return fsi;
                     }
                 })
+                .and()
+                .authorizeRequests()
+                .antMatchers("/api/weather").permitAll()
                 .anyRequest().permitAll()
                 .and()
                 .csrf().disable().exceptionHandling()

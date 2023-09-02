@@ -15,6 +15,7 @@ public abstract class AbstractUploadStrategyImpl implements UploadStrategy {
     public String uploadFile(MultipartFile file, String path) {
         try {
             String md5 = FileUtil.getMd5(file.getInputStream());
+
             String extName = FileUtil.getExtName(file.getOriginalFilename());
             String fileName = md5 + extName;
             if (!exists(path + fileName)) {

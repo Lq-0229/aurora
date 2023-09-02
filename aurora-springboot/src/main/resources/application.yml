@@ -5,9 +5,9 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://mysql的ip:3306/aurora?serverTimezone=Asia/Shanghai&allowMultiQueries=true
-    username: 账号
-    password: 密码
+    url: jdbc:mysql://114.115.223.159:3306/aurora?serverTimezone=Asia/Shanghai&allowMultiQueries=true
+    username: root
+    password: liuqi1020
     hikari:
       minimum-idle: 10
       idle-timeout: 180000
@@ -19,9 +19,9 @@ spring:
       connection-test-query: SELECT 1
 
   redis:
-    host: redis的ip
+    host: 172.17.0.4  #235.159
     port: 6379
-    password: 密码
+    password: 123321
     database: 0
     lettuce:
       pool:
@@ -31,10 +31,10 @@ spring:
         max-wait: 10000
 
   rabbitmq:
-    host: rabbitmq的ip
+    host: 114.115.223.159  #235.159
     port: 5672
-    username: 账号
-    password: 密码
+    username: guest
+    password: guest
     listener:
       simple:
         retry:
@@ -44,12 +44,12 @@ spring:
 
   elasticsearch:
     rest:
-      uris: es的ip:9200
+      uris: 114.115.223.159:9200
 
   mail:
-    host: smtp.163.com
-    username: 邮箱
-    password: 密码
+    host: smtp.qq.com
+    username: 1878834140@qq.com
+    password: ikrdvnolyytabbae
     default-encoding: UTF-8
     protocol: smtp
     port: 465
@@ -81,24 +81,25 @@ search:
   mode: elasticsearch
 
 upload:
-  mode: oss
+  mode: minio
   oss:
-    url: http://Bucket域名/
-    endpoint: OSS配置endpoint
-    accessKeyId: OSS配置accessKeyId
-    accessKeySecret: OSS配置accessKeySecret
-    bucketName: OSS配置bucketName
+    url: http://beimeng0.oss-cn-wulanchabu.aliyuncs.com/
+    endpoint: oss-cn-wulanchabu.aliyuncs.com
+    accessKeyId: LTAI5tQhwd7x34fKrmU1N9iC
+    accessKeySecret: WkZQMRpEFr3Ij9oihvKWmu1gH8L7Js
+    bucketName: beimeng0
   minio:
-    url: http://minio的ip:9000/
-    endpoint: http://minio的ip:9000
-    accesskey: 用户名
-    secretKey: 密码
-    bucketName: 桶的名称
+    url: https://www.bmmx0229.top:9000/beimeng0/
+    endpoint: https://www.bmmx0229.top:9000
+    accesskey: YPLNT4M1984GI61S5CVB
+    secretKey: e7RMIJZ6HwppVGDOAbrEaRBCrX4qTE6gQVWakoC7
+    bucketName: beimeng0
 
 website:
-  url: https://前台域名
+  url: https://www.bmmx0229.top
+
 
 qq:
-  app-id: QQ APPID
+  app-id: 102053608
   check-token-url: https://graph.qq.com/oauth2.0/me?access_token={access_token}
   user-info-url: https://graph.qq.com/user/get_user_info?openid={openid}&access_token={access_token}&oauth_consumer_key={oauth_consumer_key}
