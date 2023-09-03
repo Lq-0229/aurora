@@ -19,7 +19,7 @@ public class WeatherForecast {
 
 
     //和风天气key
-    private static String key= "097779ad64364a96b39539a8d052acbd";
+    private static String key= "";
 
 
     public static   JSONObject getTjWether(String userCity)  {
